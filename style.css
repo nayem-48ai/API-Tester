@@ -1,0 +1,145 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: #eee;
+  text-align: center;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 2em;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #0ff;
+  width: 0;
+  margin: 0 auto 20px;
+  animation: typing 4s steps(20) infinite, blink 0.7s step-end infinite alternate;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 280px; }
+  100% { width: 0; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+input, select, textarea, button {
+  width: 90%;
+  max-width: 600px;
+  padding: 10px;
+  margin: 10px auto;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px #0ff;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #0ff;
+}
+
+.hidden {
+  display: none;
+}
+
+#loader {
+  border: 4px solid #eee;
+  border-top: 4px solid #0ff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+#toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: none;
+  z-index: 999;
+}
+
+#response {
+  white-space: pre-wrap;
+  background-color: #121212;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: #0f0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#history {
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+#history ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#history li {
+  margin-bottom: 5px;
+  background-color: #1a1a1a;
+  padding: 5px 10px;
+  border-left: 4px solid #0ff;
+  color: #ccc;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>API Tester</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>API Tester</h1>
+
+  <input type="text" id="url" placeholder="Enter API URL"/>
+  <select id="method">
+    <option value="GET">GET</option>
+    <option value="POST">POST</option>
+  </select>
+
+  <label for="payload" id="payloadLabel">Payload (for POST only):</label>
+  <textarea id="payload" placeholder='{"key":"value"}'></textarea>
+
+  <div class="row">
+    <label class="checkbox-label">
+      <input type="checkbox" id="repeatToggle" />
+      Repeat
+    </label>
+    <input type="number" id="repeatCount" class="hidden" placeholder="Times" min="1" />
+  </div>
+
+  <button onclick="sendRequest()">Send Request</button>
+  <div id="loader"></div>
+  <div id="toast"></div>
+
+  <h3>Response:</h3>
+  <div id="response"></div>
+
+  <div id="history">
+    <h3>Request History:</h3>
+    <ul id="historyList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
